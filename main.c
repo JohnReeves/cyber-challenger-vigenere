@@ -39,12 +39,17 @@ int main(void)
     // for shifting each message letter with the 
     // caesar cipher
 
-    printf("Vigenare backwards keyword is: ");
-    for (i = strlen(keyword); i >= 0; i--) {
-      printf("%c", keyword[i]);
+    printf("Vigenare keyword is: ");
+    for (i = 0; i < strlen(keyword); i++) {
+      printf("%c ", keyword[i]);
+    }
+     printf("\n");
+
+    printf("Vigenare shifts are: ");
+    for (i = 0; i < strlen(keyword); i++) {
       char *pos = strchr (alphabet, keyword[i]);
-      int position = position ? pos - alphabet : -1;
-      printf("%d", position);
+      int position = pos ? pos - alphabet : -1;
+      printf("%d ", position);
     }
      printf("\n");
 
@@ -91,6 +96,16 @@ int main(void)
     }
     printf("\n");
 
+    printf("\nAlphabet with keyword shift\n");
+    int j = 0;
+    for (i = 0; i < strlen(alphabet); i++) {
+      printf("%c", alphabet[i]);
+      char *pos = strchr (alphabet, keyword[ j++ ]);
+      int shift = pos ? pos - alphabet : -1;
+      printf(" -> %c, ",alphabet[((i + shift) % 26)]);
+      if (j == strlen(keyword)) j = 0;
+    }
+    printf("\n");
     return 0;
 } 
 
