@@ -14,7 +14,7 @@ int b = 3;
 // vigenere cipher uses a keyword to give
 // the shift for each letter in the message
 // (the key is moved along the message)
-char message[]="keyword";
+char keyword[]="keyword";
 
 int main(void) 
 {
@@ -32,6 +32,19 @@ int main(void)
     // keeping spaces, printing backwards
     for (i = strlen(name); i >= 0; i--) {
       printf("%c", name[i]);
+    }
+     printf("\n");
+
+    // converting keyword to alphabetic indexes
+    // for shifting each message letter with the 
+    // caesar cipher
+
+    printf("Vigenare backwards keyword is: ");
+    for (i = strlen(keyword); i >= 0; i--) {
+      printf("%c", keyword[i]);
+      char *pos = strchr (alphabet, keyword[i]);
+      int position = position ? pos - alphabet : -1;
+      printf("%d", position);
     }
      printf("\n");
 
