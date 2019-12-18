@@ -14,7 +14,7 @@ int b = 3;
 // vigenere cipher uses a keyword to give
 // the shift for each letter in the message
 // (the key is moved along the message)
-char keyword[]="keyword";
+char keyword[]="babacabab";
 
 int main(void) 
 {
