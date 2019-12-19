@@ -100,8 +100,10 @@ int main(void)
     int j = 0;
     for (i = 0; i < strlen(alphabet); i++) {
       printf("%c", alphabet[i]);
+
       char *pos = strchr (alphabet, keyword[ j++ ]);
       int shift = pos ? pos - alphabet : -1;
+      
       printf(" -> %c, ",alphabet[((i + shift) % 26)]);
       if (j == strlen(keyword)) j = 0;
     }
